@@ -41,7 +41,9 @@ for(i=3;i>=0;i=i-1) begin
 	assign out [32*i+31:32*i+24] = multiply_by_02(in[32*i+31:32*i+24]) ^ multiply_by_03(in[32*i+23:32*i+16]) ^  (in[32*i+15:32*i+8]) ^  (in[32*i+7:32*i]);
 	assign out [32*i+23:32*i+16] =  (in[32*i+31:32*i+24]) ^ multiply_by_02(in[32*i+23:32*i+16]) ^ multiply_by_03(in[32*i+15:32*i+8]) ^  (in[32*i+7:32*i]);
 	assign out [32*i+15:32*i+8]  =  (in[32*i+31:32*i+24]) ^  (in[32*i+23:32*i+16]) ^ multiply_by_02(in[32*i+15:32*i+8]) ^ multiply_by_03(in[32*i+7:32*i]);
-  assign out [32*i+7:32*i]     = multiply_by_03(in[32*i+31:32*i+24]) ^  (in[32*i+23:32*i+16]) ^  (in[32*i+15:32*i+8]) ^ multiply_by_02(in[32*i+7:32*i]);
+    assign out [32*i+7:32*i]     = multiply_by_03(in[32*i+31:32*i+24]) ^  (in[32*i+23:32*i+16]) ^  (in[32*i+15:32*i+8]) ^ multiply_by_02(in[32*i+7:32*i]);
 end
 endgenerate
 endmodule
+
+
